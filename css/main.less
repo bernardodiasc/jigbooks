@@ -1,0 +1,175 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none !important;
+    border: 0;
+    text-rendering: optimizeLegibility;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0 auto;
+    width: 768px;
+    background: url("../img/bg_navi.jpg") center top;
+    color: #111;
+    letter-spacing: 0.05em;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+h1 {
+    width: 100%;
+    color: #fff;
+    text-shadow: 0px 3px 4px rgba(33,31,30,0.75);
+    font-size: 5em;
+}
+
+/*
+# States
+
+## Main Screens
+boot : creation of main persistent objects, detection about device or screen, various global optimizations
+preload : download global assets which are accessible along the whole game
+mainmenu : general game menu, display of the rules
+
+## Gameplay
+introX : intro for level 1, download level1 assets
+levelX : first level of the game
+
+## In Game
+gameover : game over menu, replay or quit
+pause : game pause animation
+
+etc
+*/
+
+section.state {
+    position: absolute;
+    display: none;
+    width: 768px;
+    height: 1024px;
+    text-align: center;
+}
+
+section#boot {
+    background: url("../img/logo_avante.png") center center no-repeat;
+}
+
+section#preload {
+    background: url("../img/logo_game.png") center center no-repeat;
+
+    .loading {
+        position: absolute;
+        bottom: 0;
+        display: block;
+        overflow: hidden;
+        margin: 10px auto;
+        width: 100%;
+        height: 14px;
+        border: 1px #ccc solid;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.3);
+
+        em {
+            display: block;
+            float: left;
+            width: 0%;
+            height: 100%;
+            border: none;
+            background: rgba(255, 255, 255, 0.5);
+        }
+    }
+}
+
+section#mainmenu {
+    .cover {
+        display: none;
+        width: 80%;
+    }
+
+    h1 {
+        position: absolute;
+        top: 230px;
+        font-size: 3em;
+    }
+
+    .mainmenu {
+        position: absolute;
+        top: 340px;
+        width: 100%;
+
+        li {
+            margin: 5px auto;
+            padding: 0 0;
+            width: 250px;
+        }
+    }
+}
+
+section#play {
+
+}
+
+section#books {
+
+}
+
+section#options {
+
+}
+
+section#achievements {
+
+}
+
+section#credits {
+
+}
+
+a.goto-mainmenu {
+    width: 250px;
+}
+
+.button {
+    position: relative;
+    display: block;
+    margin: 20px auto;
+    padding: 20px 0;
+
+    height: auto;
+
+    border: 1px solid rgba(251,250,248,0.15);
+    border-radius: 5px;
+    background: linear-gradient(to bottom, rgba(245,243,240,0.35) 0%, rgba(198,178,159,0.35) 130%);
+
+    box-shadow: 0px 1px 3px 1px rgba(33,31,30,0.5);
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0px 1px 2px rgba(33,31,30,0.75);
+    font-style: italic;
+    font-size: 20px;
+
+    &:hover {
+        background: linear-gradient(to bottom, rgba(198,178,159,0.35) 0%, rgba(245,243,240,0.35) 130%);
+        cursor: pointer;
+    }
+}
